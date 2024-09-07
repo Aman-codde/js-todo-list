@@ -1,0 +1,25 @@
+#main {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#input-task {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#submit {
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.todos-container {
+    font-size: 20px;
+}
+
+#task-list li {
+    font-size: 30px;
+    list-style-type: none;
+}
