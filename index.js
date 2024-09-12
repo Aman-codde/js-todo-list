@@ -42,5 +42,32 @@ function addTask(task){
    deleteButton.textContent= "Delete";
    li.appendChild(deleteButton);
 
+    //edit button functionality
+    editBtn.addEventListener('click',(e)=>{
+        let buttonText = "";
+        if(editBtn.textContent == "Edit"){
+            buttonText = "Save";
+            let editInput = document.createElement('input');
+            editInput.defaultValue = task;
+            li.removeChild(li.childNodes[0]);
+            li.insertBefore(editInput,li.childNodes[0]);
+            
+
+            editInput.addEventListener('input',(e) => {
+                sessionStorage.setItem('updatedValue',e.target.value)
+                task = e.target.value;
+            });
+        }
+
+        if(editBtn.textContent == "Save"){
+            buttonText = "Edit";
+            li.removeChild(li.children[0]);
+            let spantodo = document.createElement('span');
+            spantodo.textContent = sessionStorage.getItem('updatedValue');
+            li.insertBefore(spantodo,li.childNodes[0]);   
+        }
+        editBtn.textContent = buttonText;
+    })
+
    ul.appendChild(li);
 };
