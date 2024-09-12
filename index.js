@@ -58,8 +58,6 @@ function addTask(task){
             
             // event occurs whenever input element is changed
             editInput.addEventListener('input',(e) => {
-                // storing the updated value in session storage
-                sessionStorage.setItem('updatedValue',e.target.value);
                 //update the task value
                 task = e.target.value;
             });
@@ -71,8 +69,8 @@ function addTask(task){
             //remove input field and add task text
             li.removeChild(li.children[0]);
             let spantodo = document.createElement('span');
-            //get updated value stored in session storage
-            spantodo.textContent = sessionStorage.getItem('updatedValue');
+            //get updated value from task variable 
+            spantodo.textContent = task;
             li.insertBefore(spantodo,li.childNodes[0]);   
         }
 
