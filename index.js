@@ -74,7 +74,7 @@ function addTask(task){
             li.insertBefore(spantodo,li.childNodes[0]);   
         }
 
-        //chane the edit button value after click
+        //change the edit button value after click
         editBtn.textContent = buttonText;
     }) 
 };
