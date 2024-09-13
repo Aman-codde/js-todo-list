@@ -76,5 +76,11 @@ function addTask(task){
 
         //change the edit button value after click
         editBtn.textContent = buttonText;
-    }) 
+    })
+
+    //Adding delete functionality::
+    deleteButton.addEventListener('click', ({target}) => target.parentElement.remove());    
+    console.log("deletebutton with action");
+
+    
 };
